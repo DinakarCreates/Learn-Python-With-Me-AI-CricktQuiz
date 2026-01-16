@@ -1,0 +1,58 @@
+def make_reverse(number,text):
+  rev_num = 0
+  rev_string = "" 
+  number=int(number)
+  checknum = number
+  Cchecknum= str(checknum)
+  checktext = text
+  biggest=0
+  small= 9
+  secondsmall =9 
+  secondbig=0 
+  
+  while number > 0:
+    num = number %10
+    rev_num = num + (rev_num*10)
+    number = number//10
+  print(f"given number is {checknum}")
+  print(f"reversed number:",rev_num)
+  
+  for n in Cchecknum:
+    n = int(n)
+    if n > biggest:
+      secondbig= biggest
+      biggest = n
+    elif n > secondbig and n != biggest:
+      secondbig=n
+    
+    if n < small:
+      secondsmall = small
+      small = n 
+    elif n < secondsmall and n != small:
+      secondsmall= n 
+      
+  if checknum == rev_num:
+    print("it is palindrome")
+  else:
+    print("not a palindrome")
+  for ch in text:
+    rev_string= ch + rev_string
+  print(f"given text is {text}")
+  print(f"reversed text:",rev_string)
+  
+  if checktext == rev_string:
+    print("text is a  palindrome")
+  else:
+     print("text is not a palindrome")
+  print(f"the biggest number is {biggest}, secondbig is : {secondbig}")  
+  print(f"the small number is {small}, secondsmall is : {secondsmall}")
+  
+
+num = input()
+print("below is result: \n")
+textin = input()
+make_reverse(num,textin)
+
+
+
+    
